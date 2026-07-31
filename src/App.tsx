@@ -1,13 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Footer, Gate, Hero, Modal, Navbar, Row } from '@/components/Netflix';
 import { FILEIRAS, MATERIAIS, type Material } from '@/data/materiais';
+import { jaLiberado, liberarPelaUrl } from '@/lib/acesso';
 
 export default function App() {
   const [liberado, setLiberado] = useState(false);
   const [aberto, setAberto] = useState<Material | null>(null);
 
   useEffect(() => {
-    setLiberado(localStorage.getItem('cz_access') === '1');
+    // o link da página de obrigado já traz o código: /?c=CODIGO
+    const pelaUrl = liberarPelaUrl();
+    setLiberado(pelaUrl || jaLiberado());
   }, []);
 
   const principal = useMemo(() => MATERIAIS[0], []);

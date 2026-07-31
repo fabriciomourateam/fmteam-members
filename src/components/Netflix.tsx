@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import type { Material } from '@/data/materiais';
 import { WHATSAPP } from '@/data/materiais';
+import { confere, liberar } from '@/lib/acesso';
 
 const LOGO = '/img/logo.png';
 
@@ -263,11 +264,10 @@ export function Modal({ material, onClose }: { material: Material | null; onClos
 export function Gate({ onUnlock }: { onUnlock: () => void }) {
   const [valor, setValor] = useState('');
   const [erro, setErro] = useState(false);
-  const senha = import.meta.env.VITE_ACCESS_CODE ?? 'CELULITEZERO21';
 
   const tentar = () => {
-    if (valor.trim().toUpperCase() === String(senha).toUpperCase()) {
-      localStorage.setItem('cz_access', '1');
+    if (confere(valor)) {
+      liberar();
       onUnlock();
     } else {
       setErro(true);
