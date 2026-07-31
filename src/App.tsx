@@ -21,7 +21,7 @@ export default function App() {
 
       <main id="materiais" className="mx-auto max-w-7xl pb-4">
         {FILEIRAS.map((f) => (
-          <Row key={f.titulo} titulo={f.titulo} itens={f.itens} onOpen={setAberto} />
+          <Row key={f.titulo} titulo={f.titulo} legenda={f.legenda} itens={f.itens} onOpen={setAberto} />
         ))}
       </main>
 

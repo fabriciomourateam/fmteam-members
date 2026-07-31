@@ -137,10 +137,17 @@ export const MATERIAIS: Material[] = [
   },
 ];
 
-export const FILEIRAS: { titulo: string; itens: Material[] }[] = [
-  { titulo: 'Comece por aqui', itens: MATERIAIS.filter((m) => m.ordem <= 2) },
-  { titulo: 'O protocolo completo', itens: MATERIAIS.filter((m) => m.etiqueta === 'Essencial') },
-  { titulo: 'Seus bônus', itens: MATERIAIS.filter((m) => m.etiqueta === 'Bônus') },
+export const FILEIRAS: { titulo: string; legenda?: string; itens: Material[] }[] = [
+  {
+    titulo: 'Siga nesta ordem',
+    legenda: 'Do 1 ao 5, um de cada vez. Comece pelo protocolo principal.',
+    itens: MATERIAIS.filter((m) => m.ordem <= 5),
+  },
+  {
+    titulo: 'Seus bônus',
+    legenda: 'Abra quando quiser, depois que estiver com o protocolo rodando.',
+    itens: MATERIAIS.filter((m) => m.etiqueta === 'Bônus'),
+  },
 ];
 
 export const WHATSAPP =

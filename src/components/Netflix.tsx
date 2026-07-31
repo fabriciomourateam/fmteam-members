@@ -88,10 +88,12 @@ export function Hero({ onStart }: { onStart: () => void }) {
 /* --------------------------------------------------------------- CARD ROW */
 export function Row({
   titulo,
+  legenda,
   itens,
   onOpen,
 }: {
   titulo: string;
+  legenda?: string;
   itens: Material[];
   onOpen: (m: Material) => void;
 }) {
@@ -105,19 +107,22 @@ export function Row({
 
   return (
     <section className="group/row relative py-5">
-      <h2 className="mb-3 px-4 text-lg font-extrabold text-white md:px-8 md:text-xl">{titulo}</h2>
+      <div className="mb-3 px-4 md:px-8">
+        <h2 className="text-lg font-extrabold text-white md:text-xl">{titulo}</h2>
+        {legenda && <p className="mt-0.5 text-xs text-zinc-500 md:text-sm">{legenda}</p>}
+      </div>
 
       <button
         aria-label="Voltar"
         onClick={() => scrollBy(-1)}
-        className="absolute bottom-5 left-0 top-14 z-10 hidden w-12 items-center justify-center bg-gradient-to-r from-black/80 to-transparent text-white opacity-0 transition-opacity hover:from-black md:flex group-hover/row:opacity-100"
+        className="absolute bottom-5 left-0 top-20 z-10 hidden w-12 items-center justify-center bg-gradient-to-r from-black/80 to-transparent text-white opacity-0 transition-opacity hover:from-black md:flex group-hover/row:opacity-100"
       >
         <ChevronLeft className="h-8 w-8" />
       </button>
       <button
         aria-label="Avançar"
         onClick={() => scrollBy(1)}
-        className="absolute bottom-5 right-0 top-14 z-10 hidden w-12 items-center justify-center bg-gradient-to-l from-black/80 to-transparent text-white opacity-0 transition-opacity hover:from-black md:flex group-hover/row:opacity-100"
+        className="absolute bottom-5 right-0 top-20 z-10 hidden w-12 items-center justify-center bg-gradient-to-l from-black/80 to-transparent text-white opacity-0 transition-opacity hover:from-black md:flex group-hover/row:opacity-100"
       >
         <ChevronRight className="h-8 w-8" />
       </button>
@@ -153,6 +158,10 @@ function Card({ material, onOpen }: { material: Material; onOpen: (m: Material) 
 
         <span className="absolute left-2 top-2 rounded-md bg-black/70 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-gold-2 backdrop-blur">
           {material.etiqueta}
+        </span>
+
+        <span className="gold-btn absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full font-anton text-sm leading-none">
+          {material.ordem}
         </span>
 
         <div className="absolute inset-x-0 bottom-0 p-3">
@@ -211,15 +220,15 @@ export function Modal({ material, onClose }: { material: Material | null; onClos
           </button>
         </div>
 
-        <div className="-mt-10 px-5 pb-7 md:px-8">
+        <div className="relative z-10 -mt-10 px-5 pb-7 md:px-8">
           <div className="mb-2 flex items-center gap-2">
             <Icone className="h-5 w-5 text-gold-2" />
             <span className="text-[10px] font-bold uppercase tracking-[.15em] text-gold-2">
-              {material.etiqueta} · {material.duracao}
+              Passo {material.ordem} de 9 · {material.duracao}
             </span>
           </div>
 
-          <h3 className="font-anton text-2xl uppercase leading-tight text-white md:text-3xl">
+          <h3 className="font-anton text-2xl uppercase leading-[1.15] text-white [text-shadow:0_2px_12px_rgba(0,0,0,.9)] md:text-3xl">
             {material.titulo}
           </h3>
           <p className="mt-1 text-sm font-semibold text-zinc-400">{material.linha}</p>
