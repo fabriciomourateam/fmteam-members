@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ink text-zinc-200 font-sans antialiased; }
+  ::selection { @apply bg-gold-2 text-black; }
+}
+
+@layer utilities {
+  .no-bar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-bar::-webkit-scrollbar { display: none; }
+  .gold-text {
+    background: linear-gradient(135deg, #FFE9A8, #FCD404 45%, #C9920A);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .gold-btn {
+    background: linear-gradient(135deg, #FFE9A8, #FCD404 50%, #C9920A);
+    @apply text-[#1a1300] font-extrabold uppercase tracking-wide;
+  }
+}
