@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Footer, Gate, Hero, Modal, Navbar, ProductSection, LockedSection } from '@/components/Netflix';
+import { Footer, Gate, Hero, Modal, Navbar, ProductSection, LockedSection, PremiumCard } from '@/components/Netflix';
 import { MATERIAIS, PRODUTOS, type Material, type ProdutoId } from '@/data/materiais';
 import { getProdutos, liberarPelaUrl, temAlgumProduto, type Produtos } from '@/lib/acesso';
 
@@ -67,6 +67,7 @@ export default function App() {
         )}
       </main>
 
+      <PremiumCard />
       <Footer />
       <Modal material={aberto} onClose={() => setAberto(null)} liberado={true} />
     </div>
