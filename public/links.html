@@ -75,27 +75,36 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .tf-img{flex:0 0 auto;height:260px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;transition:transform .3s ease,border-color .3s ease}
 .tf-img:hover{transform:scale(1.03);border-color:rgba(252,212,4,.4)}
 
-/* SEP, MINIS, FOOTER */
+/* SEP, CARDS COMPACTOS */
 .sep{display:flex;align-items:center;gap:16px;margin:14px 0 22px;max-width:960px;margin-left:auto;margin-right:auto;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(252,212,4,.5)}
 .sep::before,.sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.2),transparent)}
-.minis{display:grid;grid-template-columns:1fr;gap:12px;max-width:960px;margin:0 auto}
-.mini{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:14px 16px;transition:transform .24s cubic-bezier(.2,.7,.3,1),box-shadow .24s ease,border-color .24s ease,background .24s ease}
-.mini:hover{border-color:rgba(252,212,4,.5);transform:translateY(-3px);background:rgba(255,255,255,.055);box-shadow:0 14px 28px -16px rgba(252,212,4,.25)}
-.mini:active{transform:translateY(0) scale(.995);transition-duration:.09s}
-.mini:hover .ar{transform:translateX(3px)}
-.mini .ar{transition:transform .22s ease}
-.mini .ic{width:38px;height:38px;flex:0 0 38px;border-radius:10px;background:rgba(252,212,4,.08);border:1px solid rgba(252,212,4,.18);display:flex;align-items:center;justify-content:center;font-size:17px}
-.mini .tt{font-weight:800;color:#fff;font-size:.9rem;line-height:1.25;display:block}
-.mini .ss{color:#aaa;font-size:.76rem;margin-top:2px;display:block}
-.mini .ar{margin-left:auto;color:var(--gold2);font-weight:900;font-size:1rem}
+.cards-sm{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:960px;margin:0 auto}
+.card-sm{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;position:relative;will-change:transform;transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s ease,border-color .28s ease}
+.card-sm::after{content:'';position:absolute;inset:0;border-radius:20px;opacity:0;transition:opacity .28s ease;background:linear-gradient(105deg,transparent 40%,rgba(252,212,4,.08) 50%,transparent 60%);background-size:300% 100%;pointer-events:none}
+.card-sm:hover{transform:translateY(-4px);border-color:rgba(252,212,4,.6);box-shadow:0 24px 52px -20px rgba(252,212,4,.30),0 18px 40px -20px rgba(0,0,0,.9)}
+.card-sm:hover::after{opacity:1;animation:shimmer 1.8s ease-in-out}
+.card-sm:active{transform:translateY(-1px) scale(.995);transition-duration:.09s}
+.card-sm .sm-visual{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.card-sm .sm-visual.quiz-bg{background:radial-gradient(circle at 50% 60%,rgba(252,212,4,.15),transparent 70%),linear-gradient(160deg,#1a1500,#0e0a00 50%,#1a1500)}
+.card-sm .sm-visual.logo-bg{background:radial-gradient(circle at 50% 60%,rgba(252,212,4,.1),transparent 70%),linear-gradient(160deg,#111,#0a0a0a 50%,#111)}
+.card-sm .sm-visual img{height:64px;width:64px;border-radius:12px;object-fit:cover;box-shadow:0 0 30px rgba(252,212,4,.12)}
+.card-sm .sm-visual svg.quiz-icon{width:52px;height:52px;opacity:.9;filter:drop-shadow(0 0 20px rgba(252,212,4,.3))}
+.card-sm .sm-bd{padding:18px 20px;position:relative;z-index:2}
+.card-sm .kk{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:6px}
+.card-sm h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;color:#fff;font-size:1.3rem;line-height:1.05;letter-spacing:.3px}
+.card-sm p{color:#c8c8c8;font-size:.82rem;margin-top:6px;line-height:1.5}
+.card-sm .arrow{position:absolute;right:16px;bottom:16px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .26s ease;z-index:2}
+.card-sm:hover .arrow{border-color:rgba(252,212,4,.6);background:rgba(252,212,4,.12)}
+.card-sm .arrow svg{width:12px;height:12px;fill:none;stroke:rgba(255,255,255,.5);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;transition:stroke .26s}
+.card-sm:hover .arrow svg{stroke:var(--gold2)}
 .ft{text-align:center;color:#999;font-size:.68rem;margin-top:34px;line-height:1.7;padding-top:24px;border-top:1px solid rgba(252,212,4,.1);padding-bottom:40px}
 
 /* FADE-IN */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
 .reveal:nth-child(2){transition-delay:.08s}.reveal:nth-child(3){transition-delay:.16s}
 
-@media(prefers-reduced-motion:reduce){.card,.mini,.card .im,.mini .ar,.card .arrow,.card .arrow svg,.card::after,.tf-img{transition:none}.card:hover,.mini:hover,.card:active,.mini:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
-@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:3/2;min-height:auto}.card h3{font-size:2rem}.card .bd{padding:20px 18px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}}
+@media(prefers-reduced-motion:reduce){.card,.card-sm,.card .im,.card .arrow,.card .arrow svg,.card::after,.card-sm::after,.tf-img{transition:none}.card:hover,.card-sm:hover,.card:active,.card-sm:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
+@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:3/2;min-height:auto}.card h3{font-size:2rem}.card .bd{padding:20px 18px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr}.card-sm .sm-visual{height:120px}}
 </style>
 </head>
 <body>
@@ -191,12 +200,37 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 
 <div class="sep">Mais</div>
 
-<div class="minis">
-<a class="mini reveal" href="https://my-shape.app/quiz" target="_blank" rel="noopener">
-<span class="ic">🎯</span><span><span class="tt">Diagnóstico em 1 minuto</span><span class="ss">Descubra seu IMC, gasto calórico e meta personalizada</span></span><span class="ar">›</span>
+<div class="cards-sm">
+<a class="card-sm reveal" href="https://my-shape.app/quiz" target="_blank" rel="noopener">
+<div class="sm-visual quiz-bg">
+<svg class="quiz-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="20" stroke="#FCD404" stroke-width="1.5" opacity=".3"/>
+<circle cx="24" cy="24" r="13" stroke="#FCD404" stroke-width="1.5" opacity=".5"/>
+<circle cx="24" cy="24" r="6" stroke="#FCD404" stroke-width="1.8" opacity=".8"/>
+<circle cx="24" cy="24" r="2" fill="#FCD404"/>
+<line x1="24" y1="0" x2="24" y2="8" stroke="#FCD404" stroke-width="1.2" opacity=".3"/>
+<line x1="24" y1="40" x2="24" y2="48" stroke="#FCD404" stroke-width="1.2" opacity=".3"/>
+<line x1="0" y1="24" x2="8" y2="24" stroke="#FCD404" stroke-width="1.2" opacity=".3"/>
+<line x1="40" y1="24" x2="48" y2="24" stroke="#FCD404" stroke-width="1.2" opacity=".3"/>
+</svg>
+</div>
+<div class="sm-bd">
+<span class="kk">6 perguntas rápidas</span>
+<h3>Diagnóstico Gratuito</h3>
+<p>Descubra seu IMC, gasto calórico e meta personalizada em 1 minuto.</p>
+</div>
+<span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
 </a>
-<a class="mini reveal" href="https://fabriciomoura.com/links">
-<span class="ic">📖</span><span><span class="tt">Conteúdos Gratuitos</span><span class="ss">Artigos sobre emagrecimento, hormônios e treinos</span></span><span class="ar">›</span>
+<a class="card-sm reveal" href="https://fabriciomoura.com/links">
+<div class="sm-visual logo-bg">
+<img src="https://fabriciomoura.com/wp-content/uploads/2026/06/file_00000000c90871f593f63c54d36eb4701.png" alt="FM Team" />
+</div>
+<div class="sm-bd">
+<span class="kk">Artigos e dicas</span>
+<h3>Conteúdos Gratuitos</h3>
+<p>Emagrecimento, hormônios, treinos e nutrição.</p>
+</div>
+<span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
 </a>
 </div>
 
