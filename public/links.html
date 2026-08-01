@@ -65,12 +65,15 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .tf-hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .tf-hd span{font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
 .tf-hd::before,.tf-hd::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.2),transparent)}
-.tf-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 0 14px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none}
-.tf-track::-webkit-scrollbar{display:none}
-.tf-track:active{cursor:grabbing}
-.tf-img{flex:0 0 auto;height:260px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;scroll-snap-align:start;transition:transform .3s ease,border-color .3s ease}
+.tf-overflow{overflow:hidden;position:relative}
+.tf-overflow::before,.tf-overflow::after{content:'';position:absolute;top:0;bottom:0;width:40px;z-index:2;pointer-events:none}
+.tf-overflow::before{left:0;background:linear-gradient(90deg,var(--blk),transparent)}
+.tf-overflow::after{right:0;background:linear-gradient(270deg,var(--blk),transparent)}
+.tf-track{display:flex;gap:14px;width:max-content;animation:filmScroll 60s linear infinite;padding:4px 0 14px}
+.tf-track:hover{animation-play-state:paused}
+@keyframes filmScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tf-img{flex:0 0 auto;height:260px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;transition:transform .3s ease,border-color .3s ease}
 .tf-img:hover{transform:scale(1.03);border-color:rgba(252,212,4,.4)}
-.tf-hint{text-align:center;font-size:.65rem;color:#666;margin-top:2px;letter-spacing:.05em}
 
 /* SEP, MINIS, FOOTER */
 .sep{display:flex;align-items:center;gap:16px;margin:14px 0 22px;max-width:960px;margin-left:auto;margin-right:auto;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(252,212,4,.5)}
@@ -147,6 +150,7 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <!-- CARROSSEL DE TRANSFORMACOES -->
 <div class="tf-section reveal">
 <div class="tf-hd"><span>Transformações reais</span></div>
+<div class="tf-overflow">
 <div class="tf-track">
 <img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" loading="lazy" />
 <img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" loading="lazy" />
@@ -164,8 +168,25 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" loading="lazy" />
 <img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" loading="lazy" />
 <img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" loading="lazy" />
+<!-- duplicadas para loop infinito -->
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/8-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/7-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/6-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/5-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/3-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/4-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/2-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/11.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/17.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/16.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/15.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" loading="lazy" />
 </div>
-<div class="tf-hint">Arraste para ver mais →</div>
+</div>
 </div>
 
 <div class="sep">Mais</div>
@@ -191,18 +212,6 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// drag to scroll + auto-scroll no carrossel
-document.querySelectorAll('.tf-track').forEach(t=>{
-let down=false,startX,sl,autoId;
-function startAuto(){autoId=setInterval(()=>{t.scrollLeft+=1;if(t.scrollLeft>=t.scrollWidth-t.clientWidth){t.scrollLeft=0}},30)}
-function stopAuto(){clearInterval(autoId)}
-startAuto();
-t.addEventListener('mouseenter',stopAuto);t.addEventListener('mouseleave',()=>{down=false;t.style.cursor='grab';startAuto()});
-t.addEventListener('touchstart',stopAuto,{passive:true});t.addEventListener('touchend',()=>setTimeout(startAuto,3000));
-t.addEventListener('mousedown',e=>{down=true;startX=e.pageX-t.offsetLeft;sl=t.scrollLeft;t.style.cursor='grabbing'});
-t.addEventListener('mouseup',()=>{down=false;t.style.cursor='grab'});
-t.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-startX)*1.5});
-});
 </script>
 </body>
 </html>
