@@ -70,11 +70,11 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .tf-overflow::before,.tf-overflow::after{content:'';position:absolute;top:0;bottom:0;width:40px;z-index:2;pointer-events:none}
 .tf-overflow::before{left:0;background:linear-gradient(90deg,var(--blk),transparent)}
 .tf-overflow::after{right:0;background:linear-gradient(270deg,var(--blk),transparent)}
-.tf-track{display:flex;gap:14px;width:max-content;animation:filmScroll 60s linear infinite;padding:4px 0 14px}
+.tf-track{display:flex;gap:14px;width:max-content;animation:filmScroll 60s linear infinite;padding:4px 0 14px;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0)}
 .tf-track:hover{animation-play-state:paused}
-@keyframes filmScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tf-img{flex:0 0 auto;height:260px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;transition:transform .3s ease,border-color .3s ease}
-.tf-img:hover{transform:scale(1.03);border-color:rgba(252,212,4,.4)}
+@keyframes filmScroll{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-50%,0,0)}}
+.tf-img{flex:0 0 auto;height:260px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0)}
+.tf-img:hover{border-color:rgba(252,212,4,.4)}
 
 /* SEP, CARDS COMPACTOS */
 .sep{display:flex;align-items:center;gap:16px;margin:14px 0 22px;max-width:960px;margin-left:auto;margin-right:auto;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(252,212,4,.5)}
@@ -162,39 +162,39 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="tf-hd"><span>Transformações reais</span></div>
 <div class="tf-overflow">
 <div class="tf-track">
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/8-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/7-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/6-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/5-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/3-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/4-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/2-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/11.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/17.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/16.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/15.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/8-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/7-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/6-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/5-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/3-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/4-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/2-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/11.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/17.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/16.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/15.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" />
 <!-- duplicadas para loop infinito -->
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/8-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/7-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/6-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/5-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/3-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/4-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/2-1.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/11.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/17.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/16.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/15.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" loading="lazy" />
-<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/8-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/7-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/6-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/5-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/3-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/4-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/2-1.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/11.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/17.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/16.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/15.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" />
 </div>
 </div>
 </div>
