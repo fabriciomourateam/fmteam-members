@@ -48,8 +48,8 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .card .badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold2);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 8px var(--gold2)}50%{opacity:.5;box-shadow:0 0 3px var(--gold2)}}
 .card .bd{padding:26px 28px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.card .kk{font-size:.64rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:8px}
-.card h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;color:#fff;font-size:1.9rem;line-height:1.0;letter-spacing:.3px}
+.card .kk{font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:8px}
+.card h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;color:#fff;font-size:2.4rem;line-height:1.0;letter-spacing:.3px}
 .card p{color:#c8c8c8;font-size:.92rem;margin-top:10px;line-height:1.55}
 .card .price-row{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}
 .card .price{font-family:var(--anton);font-size:1.7rem;color:var(--gold2);letter-spacing:.3px;line-height:1}
@@ -92,7 +92,7 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .reveal:nth-child(2){transition-delay:.08s}.reveal:nth-child(3){transition-delay:.16s}
 
 @media(prefers-reduced-motion:reduce){.card,.mini,.card .im,.mini .ar,.card .arrow,.card .arrow svg,.card::after,.tf-img{transition:none}.card:hover,.mini:hover,.card:active,.mini:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
-@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:3/2;min-height:auto}.card h3{font-size:1.6rem}.card .bd{padding:20px 18px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}}
+@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:3/2;min-height:auto}.card h3{font-size:2rem}.card .bd{padding:20px 18px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}}
 </style>
 </head>
 <body>
@@ -191,8 +191,18 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// drag to scroll no carrossel
-document.querySelectorAll('.tf-track').forEach(t=>{let down=false,startX,sl;t.addEventListener('mousedown',e=>{down=true;startX=e.pageX-t.offsetLeft;sl=t.scrollLeft;t.style.cursor='grabbing'});t.addEventListener('mouseleave',()=>{down=false;t.style.cursor='grab'});t.addEventListener('mouseup',()=>{down=false;t.style.cursor='grab'});t.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-startX)*1.5})});
+// drag to scroll + auto-scroll no carrossel
+document.querySelectorAll('.tf-track').forEach(t=>{
+let down=false,startX,sl,autoId;
+function startAuto(){autoId=setInterval(()=>{t.scrollLeft+=1;if(t.scrollLeft>=t.scrollWidth-t.clientWidth){t.scrollLeft=0}},30)}
+function stopAuto(){clearInterval(autoId)}
+startAuto();
+t.addEventListener('mouseenter',stopAuto);t.addEventListener('mouseleave',()=>{down=false;t.style.cursor='grab';startAuto()});
+t.addEventListener('touchstart',stopAuto,{passive:true});t.addEventListener('touchend',()=>setTimeout(startAuto,3000));
+t.addEventListener('mousedown',e=>{down=true;startX=e.pageX-t.offsetLeft;sl=t.scrollLeft;t.style.cursor='grabbing'});
+t.addEventListener('mouseup',()=>{down=false;t.style.cursor='grab'});
+t.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-startX)*1.5});
+});
 </script>
 </body>
 </html>
