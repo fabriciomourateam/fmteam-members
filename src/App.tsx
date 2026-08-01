@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Footer, Gate, Hero, Modal, Navbar, ProductSection, LockedSection, PremiumCard } from '@/components/Netflix';
+import { Footer, Gate, Hero, Modal, Navbar, ProductSection, LockedSection, PremiumCard, SectionDivider } from '@/components/Netflix';
 import { MATERIAIS, PRODUTOS, type Material, type ProdutoId } from '@/data/materiais';
 import { getProdutos, liberarPelaUrl, temAlgumProduto, type Produtos } from '@/lib/acesso';
 
@@ -55,18 +55,19 @@ export default function App() {
 
         {outroLiberado ? (
           <>
-            <div className="mx-auto mt-6 max-w-7xl px-4 md:px-8">
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-gold-2/30 to-transparent" />
-              <p className="mt-4 text-xs font-bold uppercase tracking-[.2em] text-gold-2/60">{PRODUTOS[outroProduto].nome}</p>
-            </div>
+            <SectionDivider label={PRODUTOS[outroProduto].nome} />
             <ProductSection titulo="Siga nesta ordem" legenda={`Do 1 ao ${essenciais2.length}.`} itens={essenciais2} onOpen={setAberto} />
             <ProductSection titulo="Bônus" itens={bonus2} onOpen={setAberto} />
           </>
         ) : (
-          <LockedSection produto={PRODUTOS[outroProduto]} materiais={outrosMateriais} />
+          <>
+            <SectionDivider />
+            <LockedSection produto={PRODUTOS[outroProduto]} materiais={outrosMateriais} />
+          </>
         )}
       </main>
 
+      <SectionDivider label="Quer resultado mais rápido?" />
       <PremiumCard />
       <Footer />
       <Modal material={aberto} onClose={() => setAberto(null)} liberado={true} />

@@ -185,6 +185,28 @@ export function Gate({ onUnlock }: { onUnlock: (p: Produtos) => void }) {
   );
 }
 
+/* ========================================================== DIVIDER */
+export function SectionDivider({ label }: { label?: string }) {
+  return (
+    <div className="mx-auto my-10 max-w-7xl px-4 md:px-8">
+      <div className="relative flex items-center justify-center">
+        {/* linha esquerda */}
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gold-2/25 to-gold-2/40" />
+        {/* diamante central */}
+        <div className="relative mx-5 flex items-center justify-center">
+          <div className="absolute h-10 w-10 rounded-full bg-gold-2/5 blur-xl" />
+          <div className="relative h-2.5 w-2.5 rotate-45 border border-gold-2/50 bg-gold-2/20" />
+        </div>
+        {/* linha direita */}
+        <div className="h-px flex-1 bg-gradient-to-l from-transparent via-gold-2/25 to-gold-2/40" />
+      </div>
+      {label && (
+        <p className="mt-4 text-center text-[11px] font-bold uppercase tracking-[.22em] text-gold-2/50">{label}</p>
+      )}
+    </div>
+  );
+}
+
 /* ======================================================= PREMIUM CARD */
 const WA_CONSULTORIA = 'https://wa.me/+5511914849797?text=Oi%20Fabricio!%20Quero%20a%20consultoria%20individual.';
 const IMG_CONSULTORIA = 'https://fabriciomoura.com/wp-content/uploads/2024/06/Design-sem-nome-15-e1781459644476.png';
