@@ -196,13 +196,13 @@ export function PremiumCard() {
         href={WA_CONSULTORIA}
         target="_blank"
         rel="noopener"
-        className="group relative grid overflow-hidden rounded-2xl border border-white/10 bg-ink-card transition duration-300 hover:-translate-y-1 hover:border-gold-2/50 hover:shadow-[0_24px_52px_-20px_rgba(252,212,4,.25)] md:grid-cols-[38fr_62fr]"
+        className="group relative grid overflow-hidden rounded-2xl border border-white/10 bg-ink-card transition duration-300 hover:-translate-y-1 hover:border-gold-2/50 hover:shadow-[0_24px_52px_-20px_rgba(252,212,4,.25)] md:grid-cols-[28fr_72fr]"
       >
         {/* shimmer */}
         <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[linear-gradient(105deg,transparent_40%,rgba(252,212,4,.08)_50%,transparent_60%)] bg-[length:300%_100%] opacity-0 transition-opacity duration-300 group-hover:animate-[shimmer_1.8s_ease-in-out] group-hover:opacity-100" />
 
         {/* imagem */}
-        <div className="relative aspect-[3/2] overflow-hidden md:aspect-auto md:min-h-[220px]">
+        <div className="relative aspect-[3/2] overflow-hidden md:aspect-auto md:min-h-[160px]">
           <img src={IMG_CONSULTORIA} alt="Consultoria individual" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold-2/40 bg-black/70 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-gold-2 backdrop-blur">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold-2 shadow-[0_0_8px_var(--color-gold-2)]" />Exclusivo
@@ -211,9 +211,9 @@ export function PremiumCard() {
 
         {/* texto */}
         <div className="relative z-10 flex flex-col justify-center p-6 md:p-8">
-          <span className="mb-2 text-[10px] font-extrabold uppercase tracking-[.2em] text-gold-2">Acompanhamento de perto</span>
-          <h3 className="font-anton text-2xl uppercase text-white md:text-3xl">Consultoria Individual</h3>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+          <span className="mb-2 text-xs font-extrabold uppercase tracking-[.2em] text-gold-2">Acompanhamento de perto</span>
+          <h3 className="font-anton text-3xl uppercase text-white md:text-4xl">Consultoria Individual</h3>
+          <p className="mt-3 text-base leading-relaxed text-zinc-400">
             Dieta e Treino personalizados, feitos pra sua realidade. Aqui você vai perder gordura e ganhar massa muscular!
           </p>
           <span className="gold-btn mt-5 inline-flex w-fit items-center gap-2 rounded-xl px-6 py-3 text-sm shadow-lg shadow-gold-3/20">
