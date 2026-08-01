@@ -15,14 +15,26 @@ body{background:var(--blk);color:var(--tx);font-family:var(--mont);line-height:1
 a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .wrap{max-width:100%;width:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2}
 .topline{height:2px;background:linear-gradient(90deg,transparent 10%,var(--gold3) 30%,var(--gold2) 50%,var(--gold3) 70%,transparent 90%);opacity:.7}
-.hero{position:relative;text-align:center;padding:48px 0 38px;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:440px;background:radial-gradient(circle,rgba(252,212,4,.16),transparent 60%);pointer-events:none}
-.hero img.logo{width:72px;height:auto;border-radius:14px;margin:0 auto 14px;display:block;position:relative}
+
+/* HERO com glow forte */
+.hero{position:relative;text-align:center;padding:48px 0 28px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(circle,rgba(252,212,4,.22) 0%,rgba(252,212,4,.08) 30%,transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:400px;height:300px;background:radial-gradient(circle,rgba(252,212,4,.12),transparent 50%);pointer-events:none;filter:blur(40px)}
+.hero img.logo{width:78px;height:auto;border-radius:14px;margin:0 auto 14px;display:block;position:relative;box-shadow:0 0 40px rgba(252,212,4,.15)}
 .hero .hd{font-family:var(--anton);font-size:2rem;letter-spacing:.5px;color:#fff;text-transform:uppercase;line-height:1;position:relative}
 .hero .rl{color:#d4d4d4;font-size:.9rem;margin-top:8px;letter-spacing:.03em;position:relative}
 .hero .rl b{color:var(--gold2)}
 .hero .divider{width:100px;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.5),transparent);margin:20px auto 0;position:relative;display:flex;align-items:center;justify-content:center}
 .hero .divider::after{content:'◆';position:absolute;color:var(--gold2);font-size:7px;background:var(--blk);padding:0 10px}
+
+/* BARRA DE NUMEROS */
+.stats{display:flex;justify-content:center;gap:32px;max-width:960px;margin:0 auto 28px;padding:18px 0;border-top:1px solid rgba(252,212,4,.1);border-bottom:1px solid rgba(252,212,4,.1);position:relative}
+.stats::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(252,212,4,.03),transparent);pointer-events:none}
+.stat{text-align:center;position:relative}
+.stat .num{font-family:var(--anton);font-size:1.6rem;color:var(--gold2);line-height:1;letter-spacing:.5px}
+.stat .lbl{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-top:4px}
+
+/* CARDS */
 .card{display:grid;grid-template-columns:38fr 62fr;max-width:960px;margin:0 auto 20px;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;position:relative;will-change:transform;transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s ease,border-color .28s ease}
 .card::after{content:'';position:absolute;inset:0;border-radius:20px;opacity:0;transition:opacity .28s ease;background:linear-gradient(105deg,transparent 40%,rgba(252,212,4,.08) 50%,transparent 60%);background-size:300% 100%;pointer-events:none}
 @keyframes shimmer{from{background-position:200% 0}to{background-position:-100% 0}}
@@ -39,14 +51,28 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .card .kk{font-size:.64rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:8px}
 .card h3{font-family:var(--anton);font-weight:400;text-transform:uppercase;color:#fff;font-size:1.9rem;line-height:1.0;letter-spacing:.3px}
 .card p{color:#c8c8c8;font-size:.92rem;margin-top:10px;line-height:1.55}
-.card .price-row{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}
-.card .price{font-family:var(--anton);font-size:1.4rem;color:var(--gold2);letter-spacing:.3px}
-.card .guarantee{display:inline-flex;align-items:center;gap:5px;background:rgba(252,212,4,.08);border:1px solid rgba(252,212,4,.25);border-radius:100px;padding:4px 10px;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2)}
-.card .guarantee svg{width:12px;height:12px;fill:none;stroke:var(--gold2);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.card .price-row{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+.card .price{font-family:var(--anton);font-size:1.7rem;color:var(--gold2);letter-spacing:.3px;line-height:1}
+.card .guarantee{display:inline-flex;align-items:center;gap:5px;background:rgba(252,212,4,.08);border:1px solid rgba(252,212,4,.25);border-radius:100px;padding:5px 12px;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2)}
+.card .guarantee svg{width:13px;height:13px;fill:none;stroke:var(--gold2);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .card .arrow{position:absolute;right:20px;bottom:20px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .26s ease;z-index:2}
 .card:hover .arrow{border-color:rgba(252,212,4,.6);background:rgba(252,212,4,.12)}
 .card .arrow svg{width:14px;height:14px;fill:none;stroke:rgba(255,255,255,.5);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;transition:stroke .26s}
 .card:hover .arrow svg{stroke:var(--gold2)}
+
+/* CARROSSEL TRANSFORMACOES */
+.tf-section{max-width:960px;margin:28px auto 8px;position:relative}
+.tf-hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.tf-hd span{font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+.tf-hd::before,.tf-hd::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.2),transparent)}
+.tf-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 0 14px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none}
+.tf-track::-webkit-scrollbar{display:none}
+.tf-track:active{cursor:grabbing}
+.tf-img{flex:0 0 auto;height:260px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;scroll-snap-align:start;transition:transform .3s ease,border-color .3s ease}
+.tf-img:hover{transform:scale(1.03);border-color:rgba(252,212,4,.4)}
+.tf-hint{text-align:center;font-size:.65rem;color:#666;margin-top:2px;letter-spacing:.05em}
+
+/* SEP, MINIS, FOOTER */
 .sep{display:flex;align-items:center;gap:16px;margin:14px 0 22px;max-width:960px;margin-left:auto;margin-right:auto;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(252,212,4,.5)}
 .sep::before,.sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.2),transparent)}
 .minis{display:grid;grid-template-columns:1fr;gap:12px;max-width:960px;margin:0 auto}
@@ -60,11 +86,13 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .mini .ss{color:#aaa;font-size:.76rem;margin-top:2px;display:block}
 .mini .ar{margin-left:auto;color:var(--gold2);font-weight:900;font-size:1rem}
 .ft{text-align:center;color:#999;font-size:.68rem;margin-top:34px;line-height:1.7;padding-top:24px;border-top:1px solid rgba(252,212,4,.1);padding-bottom:40px}
-/* fade-in on scroll */
+
+/* FADE-IN */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
 .reveal:nth-child(2){transition-delay:.08s}.reveal:nth-child(3){transition-delay:.16s}
-@media(prefers-reduced-motion:reduce){.card,.mini,.card .im,.mini .ar,.card .arrow,.card .arrow svg,.card::after{transition:none}.card:hover,.mini:hover,.card:active,.mini:active{transform:none}.reveal{opacity:1;transform:none;transition:none}}
-@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:3/2;min-height:auto}.card h3{font-size:1.6rem}.card .bd{padding:20px 18px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.2rem}}
+
+@media(prefers-reduced-motion:reduce){.card,.mini,.card .im,.mini .ar,.card .arrow,.card .arrow svg,.card::after,.tf-img{transition:none}.card:hover,.mini:hover,.card:active,.mini:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
+@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:3/2;min-height:auto}.card h3{font-size:1.6rem}.card .bd{padding:20px 18px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}}
 </style>
 </head>
 <body>
@@ -73,8 +101,15 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="hero">
 <img class="logo" src="https://fabriciomoura.com/wp-content/uploads/2026/06/file_00000000c90871f593f63c54d36eb4701.png" alt="Fabricio Moura Team" />
 <div class="hd">Fabricio Moura</div>
-<div class="rl">Nutricionista e Treinador &nbsp;·&nbsp; <b>+2.000 transformações em 7 países</b></div>
+<div class="rl">Nutricionista e Treinador &nbsp;·&nbsp; <b>@fabriciomourateam</b></div>
 <div class="divider"></div>
+</div>
+
+<!-- BARRA DE NUMEROS -->
+<div class="stats reveal">
+<div class="stat"><div class="num">+2.000</div><div class="lbl">Transformações</div></div>
+<div class="stat"><div class="num">7</div><div class="lbl">Países</div></div>
+<div class="stat"><div class="num">18</div><div class="lbl">Anos de experiência</div></div>
 </div>
 
 <a class="card reveal" href="https://wa.me/+5511914849797?text=Oi%20Fabricio!%20Quero%20a%20consultoria%20individual." target="_blank" rel="noopener">
@@ -90,7 +125,10 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="bd"><span class="kk">Protocolo completo</span>
 <h3>Celulite Zero</h3>
 <p>Os 4 pilares que mudam o aspecto da pele, com treino, cardápio, checklist e 9 materiais.</p>
-<div class="price-row"><span class="price">R$ 37,90</span><span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span></div></div>
+<div class="price-row">
+<span class="price">R$ 37,90</span>
+<span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span>
+</div></div>
 <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
 </a>
 
@@ -99,9 +137,36 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="bd"><span class="kk">Recomposição corporal</span>
 <h3>Seque Ganhando Massa</h3>
 <p>Perca gordura e ganhe músculo ao mesmo tempo. As 3 condições, treino ABCD e tudo calculado.</p>
-<div class="price-row"><span class="price">R$ 47</span><span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span></div></div>
+<div class="price-row">
+<span class="price">R$ 47</span>
+<span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span>
+</div></div>
 <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
 </a>
+
+<!-- CARROSSEL DE TRANSFORMACOES -->
+<div class="tf-section reveal">
+<div class="tf-hd"><span>Transformações reais</span></div>
+<div class="tf-track">
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/1-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/9-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/8-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/7-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/6-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/5-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/3-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/4-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/2-1.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/11.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/17.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/16.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/15.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/14.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/13.png" alt="Transformação" loading="lazy" />
+<img class="tf-img" src="https://fabriciomoura.com/wp-content/uploads/2026/06/12-1.png" alt="Transformação" loading="lazy" />
+</div>
+<div class="tf-hint">Arraste para ver mais →</div>
+</div>
 
 <div class="sep">Mais</div>
 
@@ -123,8 +188,11 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="ft">Fabricio Moura Nutrição e Treinamento &nbsp;·&nbsp; @fabriciomourateam</div>
 </div>
 <script>
-const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.15});
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// drag to scroll no carrossel
+document.querySelectorAll('.tf-track').forEach(t=>{let down=false,startX,sl;t.addEventListener('mousedown',e=>{down=true;startX=e.pageX-t.offsetLeft;sl=t.scrollLeft;t.style.cursor='grabbing'});t.addEventListener('mouseleave',()=>{down=false;t.style.cursor='grab'});t.addEventListener('mouseup',()=>{down=false;t.style.cursor='grab'});t.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-startX)*1.5})});
 </script>
 </body>
 </html>
