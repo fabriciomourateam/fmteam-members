@@ -128,8 +128,8 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .card-product .im-wrap.crop{height:auto;min-height:100%}
 .card-product .im-wrap.crop .im{object-fit:cover;object-position:center;width:100%;height:100%}
 .card-product .im-wrap.crop::before{display:none}
-.card-product .im-wrap.slide{height:auto;min-height:160px;aspect-ratio:3/4}
-.card-product .im-wrap.slide .im{object-fit:cover;object-position:center}
+.card-product .im-wrap.slide{min-height:0;height:100%;position:relative;overflow:hidden}
+.card-product .im-wrap.slide .im{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .card-product h3{font-size:1.2rem}
 .card-product .kk{font-size:.55rem;margin-bottom:4px}
 .card-product .bd{padding:14px 14px 14px 14px}
