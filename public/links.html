@@ -132,8 +132,9 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .card .im-wrap.crop{min-height:0;height:auto!important}
 .card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:auto}
 .card .im-wrap.crop::before{display:none}
-.card .im-wrap.slide{min-height:0;position:relative;overflow:hidden;aspect-ratio:9/16;height:auto!important;display:block}
-.card .im-wrap.slide .im{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
+.card .im-wrap.slide{min-height:0;position:relative;overflow:hidden;display:block}
+.card .im-wrap.slide .im:first-child{position:relative;width:100%;height:auto;object-fit:contain;object-position:center}
+.card .im-wrap.slide .im:not(:first-child){position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 .card .kk{display:none}
 .card .guarantee{display:none}
 .card .bd{padding:10px 12px;justify-content:center;overflow:hidden}
