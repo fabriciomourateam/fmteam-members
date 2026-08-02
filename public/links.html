@@ -126,22 +126,22 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 
 @media(prefers-reduced-motion:reduce){.card,.card-sm,.card .im,.card .arrow,.card .arrow svg,.card::after,.card-sm::after,.tf-img{transition:none}.card:hover,.card-sm:hover,.card:active,.card-sm:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:680px){.wrap{padding:0 14px}
-.card{grid-template-columns:25fr 75fr}
-.card .im-wrap{min-height:0;height:100%;display:flex;align-items:center;justify-content:center;background:var(--card)}
-.card .im{object-fit:contain;object-position:center;width:100%;height:100%}
-.card .im-wrap.crop{height:auto;min-height:100%}
-.card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:100%}
+.card{grid-template-columns:30fr 70fr}
+.card .im-wrap{min-height:0;height:auto!important;overflow:hidden;display:flex;align-items:center;background:var(--card)}
+.card .im{object-fit:contain;object-position:center;width:100%;height:auto}
+.card .im-wrap.crop{min-height:0;height:auto!important}
+.card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:auto}
 .card .im-wrap.crop::before{display:none}
-.card .im-wrap.slide{min-height:0;height:100%;position:relative;overflow:hidden}
+.card .im-wrap.slide{min-height:0;position:relative;overflow:hidden;aspect-ratio:9/16;height:auto!important;display:block}
 .card .im-wrap.slide .im{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
-.card h3{font-size:1.3rem}
 .card .kk{display:none}
-.card .bd{padding:14px}
-.card p{font-size:.72rem;margin-top:4px;line-height:1.4}
-.card .price{font-size:1.1rem}
 .card .guarantee{display:none}
-.card .price-row{margin-top:8px;gap:6px}
-.card .cta-btn{font-size:.58rem;padding:8px 14px;margin-top:10px}
+.card .bd{padding:10px 12px;justify-content:center;overflow:hidden}
+.card h3{font-size:1.2rem}
+.card p{font-size:.7rem;margin-top:4px;line-height:1.3}
+.card .price{font-size:1rem}
+.card .price-row{margin-top:6px;gap:5px}
+.card .cta-btn{font-size:.55rem;padding:7px 12px;margin-top:8px}
 .card .badge{top:6px;left:6px;right:auto;font-size:.4rem;padding:2px 6px}
 .card .arrow{display:none}
 .hero .hd{font-size:1.6rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr}.card-sm .sm-visual{height:120px}}
