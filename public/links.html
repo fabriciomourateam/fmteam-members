@@ -126,14 +126,14 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 
 @media(prefers-reduced-motion:reduce){.card,.card-sm,.card .im,.card .arrow,.card .arrow svg,.card::after,.card-sm::after,.tf-img{transition:none}.card:hover,.card-sm:hover,.card:active,.card-sm:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:680px){.wrap{padding:0 14px}
-.card{grid-template-columns:50fr 50fr}
-.card .im-wrap{min-height:0;height:100%}
-.card .im{object-fit:cover;object-position:center;width:100%;height:100%}
+.card{grid-template-columns:25fr 75fr}
+.card .im-wrap{min-height:0;height:100%;display:flex;align-items:center;justify-content:center;background:var(--card)}
+.card .im{object-fit:contain;object-position:center;width:100%;height:100%}
 .card .im-wrap.crop{height:auto;min-height:100%}
-.card .im-wrap.crop .im{object-fit:cover;object-position:center;width:100%;height:100%}
+.card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:100%}
 .card .im-wrap.crop::before{display:none}
 .card .im-wrap.slide{min-height:0;height:100%;position:relative;overflow:hidden}
-.card .im-wrap.slide .im{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.card .im-wrap.slide .im{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 .card h3{font-size:1.3rem}
 .card .kk{display:none}
 .card .bd{padding:14px}
