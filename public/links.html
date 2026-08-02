@@ -63,6 +63,9 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .card:hover .arrow{border-color:rgba(252,212,4,.6);background:rgba(252,212,4,.12)}
 .card .arrow svg{width:14px;height:14px;fill:none;stroke:rgba(255,255,255,.5);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;transition:stroke .26s}
 .card:hover .arrow svg{stroke:var(--gold2)}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--gold1),var(--gold2) 50%,var(--gold3));color:#1a1300;font-weight:900;text-transform:uppercase;letter-spacing:.05em;font-size:.8rem;padding:14px 28px;border-radius:12px;transition:.22s;border:1px solid rgba(201,146,10,.5);box-shadow:0 10px 24px -8px rgba(201,146,10,.5);position:relative;z-index:2;margin-top:16px;width:100%}
+.card:hover .cta-btn{box-shadow:0 14px 30px -8px rgba(201,146,10,.6)}
+.cta-btn svg{width:16px;height:16px;fill:none;stroke:#1a1300;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 
 /* CARROSSEL TRANSFORMACOES */
 .tf-section{max-width:960px;margin:28px auto 8px;position:relative}
@@ -111,7 +114,7 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .reveal:nth-child(2){transition-delay:.08s}.reveal:nth-child(3){transition-delay:.16s}
 
 @media(prefers-reduced-motion:reduce){.card,.card-sm,.card .im,.card .arrow,.card .arrow svg,.card::after,.card-sm::after,.tf-img{transition:none}.card:hover,.card-sm:hover,.card:active,.card-sm:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
-@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:auto;min-height:auto}.card .im{object-fit:contain;object-position:center;width:100%;height:auto}.card-product h3,.card-product .kk{display:none}.card .badge{top:12px;left:12px;right:auto}.card .im-wrap.crop{height:auto}.card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:auto}.card .im-wrap.crop::before{display:none}.card h3{font-size:2rem}.card .bd{padding:18px 48px 16px 18px}.card-product .bd{padding-top:6px}.hero .hd{font-size:1.6rem}.card .arrow{right:14px;bottom:14px;width:32px;height:32px}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr}.card-sm .sm-visual{height:120px}}
+@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:auto;min-height:auto}.card .im{object-fit:contain;object-position:center;width:100%;height:auto}.card-product h3,.card-product .kk{display:none}.card .badge{top:12px;left:12px;right:auto}.card .im-wrap.crop{height:auto}.card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:auto}.card .im-wrap.crop::before{display:none}.card h3{font-size:2rem}.card .bd{padding:18px 18px 16px 18px}.card-product .bd{padding-top:6px}.card .arrow{display:none}.hero .hd{font-size:1.6rem}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr}.card-sm .sm-visual{height:120px}}
 </style>
 </head>
 <body>
@@ -136,8 +139,8 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="im-wrap"><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2024/06/Design-sem-nome-15-e1781459644476.png" alt="Consultoria individual" /></div>
 <div class="bd"><span class="kk">Acompanhamento de perto</span>
 <h3>Consultoria Individual</h3>
-<p>Dieta e Treino personalizados, feitos pra sua realidade, aqui você vai perder gordura e ganhar massa muscular ao mesmo tempo!</p></div>
-<span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
+<p>Dieta e Treino personalizados, feitos pra sua realidade, aqui você vai perder gordura e ganhar massa muscular ao mesmo tempo!</p>
+<span class="cta-btn">Garantir minha vaga <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l6 7-6 7"/></svg></span></div>
 </a>
 
 <div class="card-divider"></div>
@@ -151,8 +154,8 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="price-row">
 <span class="price">R$ 37,90</span>
 <span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span>
-</div></div>
-<span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
+</div>
+<span class="cta-btn">Quero o protocolo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l6 7-6 7"/></svg></span></div>
 </a>
 
 <div class="card-divider"></div>
@@ -166,8 +169,8 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="price-row">
 <span class="price">R$ 47,00</span>
 <span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span>
-</div></div>
-<span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
+</div>
+<span class="cta-btn">Começar agora <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l6 7-6 7"/></svg></span></div>
 </a>
 
 <!-- CARROSSEL DE TRANSFORMACOES -->
