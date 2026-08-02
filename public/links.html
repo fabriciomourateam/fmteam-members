@@ -114,7 +114,28 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .reveal:nth-child(2){transition-delay:.08s}.reveal:nth-child(3){transition-delay:.16s}
 
 @media(prefers-reduced-motion:reduce){.card,.card-sm,.card .im,.card .arrow,.card .arrow svg,.card::after,.card-sm::after,.tf-img{transition:none}.card:hover,.card-sm:hover,.card:active,.card-sm:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
-@media(max-width:680px){.wrap{padding:0 14px}.card{grid-template-columns:1fr}.card .im-wrap{aspect-ratio:auto;min-height:auto}.card .im{object-fit:contain;object-position:center;width:100%;height:auto}.card-product h3,.card-product .kk{display:none}.card .badge{top:12px;left:12px;right:auto}.card .im-wrap.crop{height:auto}.card .im-wrap.crop .im{object-fit:contain;object-position:center;width:100%;height:auto}.card .im-wrap.crop::before{display:none}.card h3{font-size:2rem}.card .bd{padding:18px 18px 16px 18px}.card-product .bd{padding-top:6px}.card .arrow{display:none}.hero .hd{font-size:1.6rem}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr}.card-sm .sm-visual{height:120px}}
+@media(max-width:680px){.wrap{padding:0 14px}
+.card{grid-template-columns:1fr}
+.card:not(.card-product) .im-wrap{aspect-ratio:auto;min-height:auto}
+.card:not(.card-product) .im{object-fit:contain;object-position:center;width:100%;height:auto}
+.card-product{grid-template-columns:38fr 62fr}
+.card-product .im-wrap.crop{height:auto;min-height:100%}
+.card-product .im-wrap.crop .im{object-fit:cover;object-position:center;width:100%;height:100%}
+.card-product .im-wrap.crop::before{display:none}
+.card-product h3{font-size:1.2rem}
+.card-product .kk{font-size:.55rem;margin-bottom:4px}
+.card-product .bd{padding:14px 14px 14px 14px}
+.card-product p{font-size:.78rem;margin-top:6px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-product .price{font-size:1.2rem}
+.card-product .guarantee{font-size:.5rem;padding:3px 8px}
+.card-product .guarantee svg{width:10px;height:10px}
+.card-product .price-row{margin-top:8px;gap:8px}
+.card-product .cta-btn{font-size:.65rem;padding:10px 14px;margin-top:10px}
+.card .badge{top:8px;left:8px;right:auto;font-size:.45rem;padding:3px 7px}
+.card:not(.card-product) h3{font-size:2rem}
+.card:not(.card-product) .bd{padding:18px 18px 16px 18px}
+.card .arrow{display:none}
+.hero .hd{font-size:1.6rem}.card .price{font-size:1.4rem}.stats{gap:20px;padding:14px 0}.stat .num{font-size:1.3rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr}.card-sm .sm-visual{height:120px}}
 </style>
 </head>
 <body>
