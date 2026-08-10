@@ -41,7 +41,7 @@ export const PRODUTOS: Record<ProdutoId, ProdutoInfo> = {
   sequeGanhando: {
     id: 'sequeGanhando',
     nome: 'Seque Ganhando Massa',
-    subtitulo: 'Protocolo de 8 semanas para perder gordura e ganhar músculo',
+    subtitulo: 'Protocolo de 4 semanas para perder gordura e ganhar músculo',
     linkCompra: 'https://pay.kiwify.com.br/Qrmv2iy',
     preco: 'R$ 47',
     heroCapa: '/img/hero-sgm.jpg',
@@ -61,13 +61,13 @@ export const MATERIAIS: Material[] = [
   { id: 'cz-receitas', produto: 'celuliteZero', ordem: 9, titulo: 'Receitas Práticas', linha: 'Comida de verdade, tempo de dia útil', descricao: 'Receitas com proteína de verdade e ingrediente de mercado normal.', etiqueta: 'Bônus', duracao: '7 páginas', arquivo: '/materiais/09-receitas-praticas.pdf', capa: '/img/capa-cz-09.jpg', icone: ChefHat },
 
   // ===== SEQUE GANHANDO MASSA =====
-  { id: 'sgm-protocolo', produto: 'sequeGanhando', ordem: 1, titulo: 'Protocolo Seque Ganhando Massa', linha: 'As 3 condições da recomposição', descricao: 'O material principal. As 3 condições, os blocos de 8 semanas e o ajuste da semana 3. Comece por aqui.', etiqueta: 'Comece aqui', duracao: '12 páginas', arquivo: '/materiais/SGM-01-protocolo-seque-ganhando-massa.pdf', capa: '/img/capa-sgm-01.jpg', icone: BookOpen },
+  { id: 'sgm-protocolo', produto: 'sequeGanhando', ordem: 1, titulo: 'Protocolo Seque Ganhando Massa', linha: 'As 3 condições da recomposição', descricao: 'O material principal. As 3 condições, os blocos de 4 semanas e o ajuste da semana 3. Comece por aqui.', etiqueta: 'Comece aqui', duracao: '12 páginas', arquivo: '/materiais/SGM-01-protocolo-seque-ganhando-massa.pdf', capa: '/img/capa-sgm-01.jpg', icone: BookOpen },
   { id: 'sgm-treino', produto: 'sequeGanhando', ordem: 2, titulo: 'Treino ABCD', linha: 'Programa com planilha de progressão', descricao: 'Quatro treinos, versão academia e casa, com o método de dupla progressão explicado com números.', etiqueta: 'Essencial', duracao: '11 páginas', arquivo: '/materiais/SGM-02-treino-abcd.pdf', capa: '/img/capa-sgm-02.jpg', icone: Dumbbell },
   { id: 'sgm-numeros', produto: 'sequeGanhando', ordem: 3, titulo: 'Seus Números', linha: 'Calorias e proteína já calculados', descricao: 'Tabelas de 50 a 100 kg, leia a linha e anote.', etiqueta: 'Essencial', duracao: '11 páginas', arquivo: '/materiais/SGM-03-seus-numeros.pdf', capa: '/img/capa-sgm-03.jpg', icone: Calculator },
   { id: 'sgm-cardapio', produto: 'sequeGanhando', ordem: 4, titulo: 'Cardápio em 3 Níveis', linha: 'Em gramas e em medida caseira', descricao: 'Com listas de troca para caber na sua rotina e no seu bolso.', etiqueta: 'Essencial', duracao: '11 páginas', arquivo: '/materiais/SGM-04-cardapio-3-niveis.pdf', capa: '/img/capa-sgm-04.jpg', icone: UtensilsCrossed },
   { id: 'sgm-proteina', produto: 'sequeGanhando', ordem: 5, titulo: 'Guia da Proteína', linha: 'Como bater a meta todo dia', descricao: 'Tabela de custo por grama, rotação semanal e preparo de domingo.', etiqueta: 'Essencial', duracao: '9 páginas', arquivo: '/materiais/SGM-05-guia-da-proteina.pdf', capa: '/img/capa-sgm-05.jpg', icone: Beef },
   { id: 'sgm-plato', produto: 'sequeGanhando', ordem: 6, titulo: 'Manual do Platô', linha: 'O que ajustar, quando e em que ordem', descricao: 'Evita o corte agressivo que destrói a recomposição.', etiqueta: 'Bônus', duracao: '7 páginas', arquivo: '/materiais/SGM-06-manual-do-plato.pdf', capa: '/img/capa-sgm-06.jpg', icone: Target },
-  { id: 'sgm-sabotagem', produto: 'sequeGanhando', ordem: 7, titulo: 'Pack Antissabotagem', linha: '10 conversas para as 8 semanas', descricao: 'Para os dias em que a balança trava e a cabeça vira contra você.', etiqueta: 'Bônus', duracao: '8 páginas', arquivo: '/materiais/SGM-07-pack-antissabotagem.pdf', capa: '/img/capa-sgm-07.jpg', icone: Headphones },
+  { id: 'sgm-sabotagem', produto: 'sequeGanhando', ordem: 7, titulo: 'Pack Antissabotagem', linha: '10 conversas para as 4 semanas', descricao: 'Para os dias em que a balança trava e a cabeça vira contra você.', etiqueta: 'Bônus', duracao: '8 páginas', arquivo: '/materiais/SGM-07-pack-antissabotagem.pdf', capa: '/img/capa-sgm-07.jpg', icone: Headphones },
   { id: 'sgm-sono', produto: 'sequeGanhando', ordem: 8, titulo: 'Recuperação e Sono', linha: 'O fator que decide o resultado', descricao: 'Sono ruim trava construção de músculo e aumenta perda de massa.', etiqueta: 'Bônus', duracao: '7 páginas', arquivo: '/materiais/SGM-08-recuperacao-e-sono.pdf', capa: '/img/capa-sgm-08.jpg', icone: Moon },
   { id: 'sgm-receitas', produto: 'sequeGanhando', ordem: 9, titulo: 'Receitas Proteicas', linha: '15 receitas com macros calculados', descricao: 'Ingrediente de mercado normal e tempo de dia útil.', etiqueta: 'Bônus', duracao: '7 páginas', arquivo: '/materiais/SGM-09-receitas-proteicas.pdf', capa: '/img/capa-sgm-09.jpg', icone: ChefHat },
 ];

@@ -15,7 +15,7 @@ export interface Produtos {
 
 // Códigos configuráveis via env
 const CODIGO_CZ = String(import.meta.env.VITE_CODE_CZ ?? 'CELULITEZERO21');
-const CODIGO_SGM = String(import.meta.env.VITE_CODE_SGM ?? 'SEQUEMASSA8S');
+const CODIGO_SGM = String(import.meta.env.VITE_CODE_SGM ?? 'SEQUEMASSA4S');
 
 function normalize(v: string): string {
   return v.trim().toUpperCase();
