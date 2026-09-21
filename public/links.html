@@ -95,23 +95,7 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 
 /* DIVISOR ENTRE CARDS */
 .card-divider{max-width:960px;margin:8px auto 12px;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.18),transparent)}
-/* DOIS PRODUTOS LADO A LADO ------------------------------------------------
-   O .card padrao e horizontal (grid 35fr/65fr: imagem a esquerda, texto a
-   direita). Em meia largura isso nao cabe, entao dentro do .cards-2 ele vira
-   card EM PE, no mesmo formato dos .card-sm do Diagnostico/Conteudos.
-   O `!important` na altura da imagem e necessario: a media query de 680px tem
-   `.card .im-wrap{height:100%!important}`, que ganharia da regra normal. */
-.cards-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:960px;margin:0 auto}
-.cards-2 .card{display:flex;flex-direction:column;max-width:none;margin:0}
-.cards-2 .card .im-wrap{min-height:0;height:225px!important}
-.cards-2 .card .im-wrap.slide .im,.cards-2 .card .im-wrap.slide-4 .im{object-fit:cover;object-position:center}
-.cards-2 .card .bd{padding:16px 18px;flex:1;justify-content:flex-start}
-.cards-2 .card h3{font-size:1.45rem}
-.cards-2 .card p{font-size:.8rem;margin-top:6px;line-height:1.45}
-.cards-2 .card .price-row{margin-top:auto;padding-top:10px;gap:8px}
-.cards-2 .card .price{font-size:1.25rem}
-.cards-2 .card .cta-btn{font-size:.62rem;padding:9px 10px;margin-top:10px}
-.cards-2 .card .arrow{display:none}
+
 
 /* SEP, CARDS COMPACTOS */
 .sep{display:flex;align-items:center;gap:16px;margin:14px 0 22px;max-width:960px;margin-left:auto;margin-right:auto;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(252,212,4,.5)}
@@ -161,15 +145,6 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .card .cta-btn{font-size:.55rem;padding:7px 12px;margin-top:8px}
 .card .badge{top:6px;left:6px;right:auto;font-size:.4rem;padding:2px 6px}
 .card .arrow{display:none}
-.cards-2{gap:10px}
-.cards-2 .card .im-wrap{height:165px!important}
-.cards-2 .card .bd{padding:11px 10px}
-.cards-2 .card h3{font-size:1.02rem}
-.cards-2 .card p{font-size:.62rem;margin-top:4px;line-height:1.3}
-.cards-2 .card .price{font-size:.92rem}
-.cards-2 .card .price-row{margin-top:auto;padding-top:6px}
-.cards-2 .card .cta-btn{font-size:.48rem;padding:7px 6px;margin-top:8px;gap:3px}
-.cards-2 .card .cta-btn svg{width:11px;height:11px}
 .hero .hd{font-size:1.6rem}.tf-img{height:220px}.cards-sm{grid-template-columns:1fr 1fr;gap:10px}.card-sm .sm-visual{height:100px}.card-sm .kk{display:none}.card-sm .sm-bd{padding:12px 10px}.card-sm h3{font-size:1rem}.card-sm p{font-size:.65rem;margin-top:4px}.card-sm .arrow{display:none}}
 </style>
 </head>
@@ -240,12 +215,12 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <div class="cards-sm">
 <a class="card-sm reveal" href="https://my-shape.app/quiz" target="_blank" rel="noopener">
 <div class="sm-visual">
-<img src="https://fabriciomoura.com/wp-content/uploads/2026/08/ChatGPT-Image-1-de-ago.-de-2026-15_40_24.png" alt="Diagnóstico Gratuito" />
+<img src="https://fabriciomoura.com/wp-content/uploads/2026/08/ChatGPT-Image-1-de-ago.-de-2026-15_40_24.png" alt="Descubra seu IMC" />
 </div>
 <div class="sm-bd">
 <span class="kk">6 perguntas rápidas</span>
-<h3>Diagnóstico Gratuito</h3>
-<p>Descubra seu IMC, gasto calórico e meta personalizada em 1 minuto.</p>
+<h3>Descubra seu IMC</h3>
+<p>Gasto calórico e meta personalizada em 1 minuto.</p>
 </div>
 <span class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h12M12 5l7 7-7 7"/></svg></span>
 </a>
@@ -263,36 +238,6 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 </div>
 
 
-<div class="sep">Protocolos</div>
-
-<div class="cards-2">
-<a class="card card-product reveal" href="https://fabriciomoura.com/celulite-zero/?utm_source=bio&utm_medium=links&utm_campaign=celulite-zero">
-<span class="badge">21 dias</span>
-<div class="im-wrap slide slide-4"><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-102227.png" alt="Transformação" /><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-102023.png" alt="Transformação" /><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-101845.png" alt="Transformação" /><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-101650.png" alt="Transformação" /></div>
-<div class="bd"><span class="kk">Protocolo completo</span>
-<h3>Celulite Zero</h3>
-<p>Os 4 pilares que mudam o aspecto da pele.</p>
-<div class="price-row">
-<span class="price">R$ 37,90</span>
-<span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span>
-</div>
-<span class="cta-btn">Quero o protocolo <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l6 7-6 7"/></svg></span></div>
-</a>
-
-
-<a class="card card-product reveal" href="https://fabriciomoura.com/seque-ganhando-massa/?utm_source=bio&utm_medium=links&utm_campaign=seque-ganhando-massa">
-<span class="badge">4 semanas</span>
-<div class="im-wrap slide"><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-101954.png" alt="Transformação" /><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-101923.png" alt="Transformação" /><img class="im" src="https://fabriciomoura.com/wp-content/uploads/2026/08/Captura-de-tela-2026-08-02-101811.png" alt="Transformação" /></div>
-<div class="bd"><span class="kk">Recomposição corporal</span>
-<h3>Seque Ganhando Massa</h3>
-<p>Seque e ganhe músculo ao mesmo tempo.</p>
-<div class="price-row">
-<span class="price">R$ 47,00</span>
-<span class="guarantee"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>7 dias de garantia</span>
-</div>
-<span class="cta-btn">Começar agora <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l6 7-6 7"/></svg></span></div>
-</a>
-</div>
 
 <div class="ft">Fabricio Moura Nutrição e Treinamento &nbsp;·&nbsp; @fabriciomourateam</div>
 </div>
