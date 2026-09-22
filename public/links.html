@@ -18,14 +18,13 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 .topline{height:2px;background:linear-gradient(90deg,transparent 10%,var(--gold3) 30%,var(--gold2) 50%,var(--gold3) 70%,transparent 90%);opacity:.7}
 
 /* HERO com glow forte */
-.hero{position:relative;text-align:center;padding:48px 0 28px;overflow:hidden}
+.hero{position:relative;text-align:center;padding:26px 0 28px;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(circle,rgba(252,212,4,.22) 0%,rgba(252,212,4,.08) 30%,transparent 60%);pointer-events:none}
 .hero::after{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:400px;height:300px;background:radial-gradient(circle,rgba(252,212,4,.12),transparent 50%);pointer-events:none;filter:blur(40px)}
 .hero img.logo{width:78px;height:auto;border-radius:14px;margin:0 auto 14px;display:block;position:relative;box-shadow:0 0 40px rgba(252,212,4,.15)}
 .hero .hd{font-family:var(--anton);font-size:2rem;letter-spacing:.5px;color:#fff;text-transform:uppercase;line-height:1;position:relative}
 .hero .rl{color:#d4d4d4;font-size:.9rem;margin-top:8px;letter-spacing:.03em;position:relative}
 .hero .rl b{color:var(--gold2)}
-.hero .divider{width:100px;height:1px;background:linear-gradient(90deg,transparent,rgba(252,212,4,.5),transparent);margin:20px auto 0}
 
 /* BARRA DE NUMEROS */
 .stats{display:flex;justify-content:center;gap:32px;max-width:960px;margin:0 auto 28px;padding:18px 0;border-top:1px solid rgba(252,212,4,.1);border-bottom:1px solid rgba(252,212,4,.1);position:relative}
@@ -128,7 +127,7 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 @media(prefers-reduced-motion:reduce){.card,.card-sm,.card .im,.card .arrow,.card .arrow svg,.card::after,.card-sm::after,.tf-img{transition:none}.card:hover,.card-sm:hover,.card:active,.card-sm:active,.tf-img:hover{transform:none}.reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:680px){.wrap{padding:0 30px}
 .card{grid-template-columns:1fr}
-.card .im-wrap{min-height:0;overflow:hidden;height:330px!important}
+.card .im-wrap{min-height:0;overflow:hidden;height:380px!important}
 .card .im{object-fit:cover;object-position:center;width:100%;height:100%}
 .card .im-wrap.crop{min-height:0}
 .card .im-wrap.crop .im{object-fit:cover;object-position:center;width:100%;height:100%}
@@ -155,7 +154,6 @@ a,a:visited,a:hover,a:active{color:inherit;text-decoration:none}
 <img class="logo" src="https://fabriciomoura.com/wp-content/uploads/2026/06/file_00000000c90871f593f63c54d36eb4701.png" alt="Fabricio Moura Team" />
 <div class="hd">Fabricio Moura</div>
 <div class="rl">Nutricionista e Treinador &nbsp;·&nbsp; <b>@fabriciomourateam</b></div>
-<div class="divider"></div>
 </div>
 
 
